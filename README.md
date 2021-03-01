@@ -1,75 +1,73 @@
-# Teste para candidatos à vaga de Desenvolvedor PHP.
+# Descrição
 
-Olá caro desenvolvedor, nesse teste analisaremos seu conhecimento geral e inclusive velocidade de desenvolvimento. Abaixo explicaremos tudo o que será necessário.
+Projeto para gerenciamento de carros desenvolvido com Laravel 8 e Vue JS 2 , banco de dados SQLITE.
 
-## Instruções
+## Tecnologias
 
-Você deve desenvolver uma API, utilizando PHP (Framework Laravel 8).
+- [Laravel](https://laravel.com/)
+- [Vue JS](https://vuejs.org/)
+- [SQLite](https://www.sqlite.org/)
+- [Boostrap](https://getbootstrap.com/)
 
+## Bibliotecas
 
-A escolha das bibliotecas, banco de dados, arquitetura, etc, fica a seu critério.
+- [axios]
+- [laravel-mix]
 
-O código precisa rodar em macOS ou Ubuntu (preferencialmente como container Docker).
+API 
 
-Altere o arquivo README explicando o que é preciso para rodar sua aplicação.
+Para rodar a API execute os comandos abaixo: 
 
-O teste
---------
+```
+# navegar para a pasta da api
+$ cd laravel-api
 
-### Back-End/PHP
+#instalar as dependências
+$ composer install
 
-A primeira etapa será o desenvolvimento **backend/PHP**:
+#criar base de dados 
+$ touch ./database/database.sqlite
 
-**Descrição:**
+#criar base de dados de testes
+$ touch ./database/database.test.sqlite
 
-- Você deverá desenvolver uma 'mini api' para que seja possível realizar operações CRUD do objeto Carro.
-> **Obs:**
-> - Você pode usar arquivo (txt, json, sqlite ou mysql) como banco de dados.
-> - Cada carro deve ter ID, Marca, Modelo, Ano.
+#executar as migrations e criar as tabelas no banco de dados
+$ php artisan migrate
 
-Sugerimos o retorno dessa 'mini api' nas seguinte urls:
+#executar o servidor
+$ php artisan serve 
 
- - `/carros` - [GET] deve retornar todos os carros cadastrados.
- - `/carros` - [POST] deve cadastrar um novo carro.
- - `/carros/{id}`[GET] deve retornar o carro com ID especificado.
- - `/carros/{id}`[PUT] deve atualizar os dados do carro com ID especificado.
- - `/carros/{id}`[DELETE] deve apagar o carro com ID especificado.
- 
-
-### Front-End
-
-Para a segunda etapa do teste, você deverá desenvolver uma SPA (Single Page Application) com Vue.js e nela deve ser possível:
-
-- Ver a lista de carros cadastrados
-- Criar um novo carro
-- Editar um carro existente
-- Apagar um carro existente
-
-> **Obs:**
-> - A página deve ser responsiva.
-> - A página deve funcionar 100% via AJAX, sem outros carregamentos de páginas.
-> - Ao criar/editar um carro, o campo "marca" deverá ser um `SELECT`
-
-> **Dicas:**
-- Você pode usar frameworks, tanto para o front-end (a sua escolha), quanto para o back-end (Laravel 8).
-- Você pode usar ferramentas de automação (Grunt, Gulp), mas deverá informar o uso completo para funcionamento do teste.
-- Será considerado ponto positivo no teste a utilização de orientação a objetos, design patterns e rotinas para testes.
+#URL: http://127.0.0.1:8000
+```
 
 
-## Entrega
+APP WEB
 
-Para iniciar o teste, faça um fork deste repositório, crie uma branch com o seu nome completo e depois envie-nos o pull request.
-Se você apenas clonar o repositório não vai conseguir fazer push e depois vai ser mais complicado fazer o pull request.
+Para rodar a APP WEB execute os comandos abaixo: 
+
+```
+# navegar para a pasta do app web
+$ cd laravel-app
+
+#instalar as dependências
+$ npm install
+
+#executar o servidor
+$ npm run dev
+
+#URL: http://localhost:8080
+```
 
 
-## Nossa análise
+## Testes
 
-- Organização do código, separação de módulos, legibilidade e comentários.
-- Histórico de commits.
+Para rodar os testes, utilize o comando abaixo:
+
+```
+$ vendor/bin/phpunit
+```
 
 
-## Dúvidas?
+## Licença
 
-Quaisquer dúvidas que você venha a ter, abra você mesmo uma nova issue, ou mande um emai.
-
-### Boa sorte!
+Desenvolvido por [AdrianoLima](https://github.com/adrianolima645/)
